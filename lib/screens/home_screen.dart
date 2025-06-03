@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 1,
-                            childAspectRatio: 2,
+                            childAspectRatio: 1,
                             crossAxisSpacing: 16,
                             mainAxisSpacing: 16,
                           ),
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         product['image'],
                                         width: double.infinity,
                                         fit: BoxFit.cover,
-                                        height: 200,
+                                        height: 600,
                                         errorBuilder:
                                             (context, error, stackTrace) =>
                                                 const Icon(
