@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../composent/search.dart' as custom_search;
+import 'create_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -135,6 +136,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final created = await Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const CreateProductScreen(),
+            ),
+          );
+          if (created == true) {
+            fetchProducts();
+          }
+        },
+        tooltip: 'Ajouter un produit',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
